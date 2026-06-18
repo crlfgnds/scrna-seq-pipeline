@@ -1,0 +1,43 @@
+# --- input ---
+h5_file: "data/human_skin_integrated.h5"   # update path to actual file
+sample_name: "human_skin"
+batch: "human_skin"
+
+# --- organism ---
+organism: "human"
+
+# --- clustering ---
+group_by_var: "condition"
+# n_dims: tune after inspecting elbow_plot.pdf
+# resolution: tune after inspecting umap_resolutions.pdf
+
+# --- annotation ---
+celltype_col: "cell_type"
+# marker_file: null
+# annotation_file: null
+
+# --- DE ---
+group_col: "condition"
+ident1: "AD"
+ident2: "healthy"
+group_levels: "AD,healthy"
+
+# --- composition ---
+sample_col: "sample"
+time_col: "none"
+time_levels: "none"
+
+# --- volcano (tune after first run) ---
+# volcano_xlim: auto
+# volcano_fc: auto
+# volcano_p: auto
+
+# --- optional modules ---
+hto: false
+subset_recluster: false
+
+# --- downstream analysis toggles (PHASE4) — set false to skip ---
+run_de: true
+run_composition: true
+run_pseudotime: true
+run_cellchat: true

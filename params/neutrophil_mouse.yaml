@@ -1,0 +1,50 @@
+# --- input ---
+h5_file: "data/neutrophil_aLy6G.h5"   # update path to actual file
+sample_name: "neutrophil_aLy6G"
+batch: "neutrophil_aLy6G"
+
+# --- organism ---
+organism: "mouse"
+
+# --- HTO demux ---
+hto: true
+hto_h5: "data/neutrophil_aLy6G.h5"   # same h5 file — Antibody Capture slot
+hashtags: "mmHashtag1,mmHashtag2,mmHashtag3,mmHashtag4,mmHashtag5,mmHashtag6"
+hashtag_labels: "Control_1,Control_2,Control_3,aLy6G_1,aLy6G_2,aLy6G_3"
+group_pattern: "Ctl"
+experiment_col: "experiment"
+
+# --- clustering ---
+group_by_var: "Group"
+# n_dims: tune after inspecting elbow_plot.pdf
+# resolution: tune after inspecting umap_resolutions.pdf
+
+# --- annotation ---
+celltype_col: "cell_type"
+# marker_file: null
+# annotation_file: null
+
+# --- DE ---
+group_col: "Group"
+ident1: "Ctl"
+ident2: "KO"
+group_levels: "Ctl,KO"
+
+# --- composition ---
+sample_col: "SampleType"
+time_col: "none"
+time_levels: "none"
+
+# --- volcano (tune after first run) ---
+# volcano_xlim: auto
+# volcano_fc: auto
+# volcano_p: auto
+
+# --- optional modules ---
+subset_recluster: false
+
+# --- downstream analysis toggles (PHASE4) — set false to skip ---
+run_de: true
+run_composition: true
+run_pseudotime: true
+run_cellchat: true
